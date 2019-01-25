@@ -1,24 +1,23 @@
 package com.jsfhibernate.util;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 
 public class HibernateUtil {
 
-	private static SessionFactory sessionFactoryObj = buildSessionFactoryObj();
+	private static final String PERSISTENCE_UNIT_NAME = "PERSISTENCE";
+	private static EntityManagerFactory factory;
 
-	// Create The SessionFactory Object From Standard (Hibernate.cfg.xml) Configuration File
-	@SuppressWarnings("deprecation")
-	public static SessionFactory buildSessionFactoryObj() {
-		try {
-			sessionFactoryObj = new Configuration().configure().buildSessionFactory();
-		} catch (ExceptionInInitializerError exceptionObj) {
-			exceptionObj.printStackTrace();
+	public static EntityManagerFactory getEntityManagerFactory() {
+		if (factory == null) {
+			factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 		}
-		return sessionFactoryObj;
+		return factory;
 	}
-
-	public static SessionFactory getSessionFactory() {
-		return sessionFactoryObj;
+	public static void shutdown() {
+		if (factory != null) {
+			factory.close();
+		}
 	}
 }

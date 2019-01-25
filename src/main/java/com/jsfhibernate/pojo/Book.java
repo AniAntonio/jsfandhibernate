@@ -57,7 +57,8 @@ public class Book implements java.io.Serializable  {
     public void saveStudentRecord() {
 		System.out.println("Calling saveStudentRecord() Method To Save Student Record");
 		dbObj = new DatabaseOperations();
-		dbObj.addStudentInDb(this);
+		dbObj.create(this);
+	
 	}
     
 
