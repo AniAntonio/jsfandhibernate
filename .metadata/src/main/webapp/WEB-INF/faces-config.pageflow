@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15486703994680" configfile="/jsfAndhibernate2/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf15486864491443" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15486864491444" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="test.xhtml" id="pf15486864491445" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15486864491444" path="/test.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" id="pf15486871560118" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15486871560119" path="login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf154868715601110" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15486871560119" path="/index.xhtml"/>
+  <links id="pf15486864491444" target="pf15486864491445" source="pf15486864491443" outcome="ok" fromaction="#{userManagedBean.create}"/>
+  <links id="pf15486871560119" target="pf154868715601110" source="pf15486871560118" outcome="index"/>
+</pageflow:Pageflow>

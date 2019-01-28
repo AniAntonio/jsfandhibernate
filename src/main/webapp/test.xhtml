@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en"
+ xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <title>JSF Hibernate</title>
+</h:head>
+<h:body>
+<h1>done</h1>
+
+
+<h:form prependId="false">
+		<h:dataTable var="user" value="#{userManagedBean.users}"
+			border="1" cellpadding="2" cellspacing="2">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				#{user.id}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Title</f:facet>
+				#{user.username}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Author</f:facet>
+				#{user.firstname}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Price</f:facet>
+				#{user.lastname}
+			</h:column>			
+			
+		</h:dataTable>
+	</h:form>
+    <h:form id="studentSaveForm">
+        <h:panelGrid columns="2">
+        
+         <div>
+                <h:outputLabel value="Name:"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.username}"   />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Pass"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.password}"  />
+                </div>
+            </div>
+             <div>
+                <h:outputLabel value="FirstName"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.firstname}"  />
+                </div>
+            </div>
+            
+            
+            <div>
+                <div >
+                    <h:commandButton value="Save Record" action="#{userManagedBean.update()}"/>
+                </div>
+            </div>
+        </h:panelGrid>
+       
+    </h:form>
+</h:body>
+</html>

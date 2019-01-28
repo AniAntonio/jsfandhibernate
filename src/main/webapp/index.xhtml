@@ -11,31 +11,74 @@
 <h:body>
     <center><h2>JSF Hibernate Crud Example</h2></center>
     <!-- New Student Form -->
-    <h3>1. New Student Form</h3>
+    <h3>1. New User Form</h3>
     <h:form id="studentSaveForm">
         <h:panelGrid columns="2">
           
-            <div>
+          <div>
                 <h:outputLabel value="Name:"   />
                 <div >
-                    <h:inputText value="#{book.title}"   />
+                    <h:inputText value="#{userManagedBean.user.username}"   />
                 </div>
             </div>
             <div>
-                <h:outputLabel value="Author"   />
+                <h:outputLabel value="LastName"   />
                 <div >
-                    <h:inputText value="#{book.author}"  />
+                    <h:inputText value="#{userManagedBean.user.lastname}"  />
                 </div>
             </div>
              <div>
-                <h:outputLabel value="Price"   />
+                <h:outputLabel value="Password"   />
                 <div >
-                    <h:inputText value="#{book.price}"  />
+                    <h:inputText value="#{userManagedBean.user.password}"  />
+                </div>
+            </div> 
+               <div>
+                <h:outputLabel value="Password"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.password}"  />
+                </div>
+            </div> 
+               <div>
+                <h:outputLabel value="Firstname"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.firstname}"  />
+                </div>
+            </div> 
+               <div>
+                <h:outputLabel value="Address"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.address}"  />
+                </div>
+            </div> 
+               <div>
+                <h:outputLabel value="Email"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.email}"  />
+                </div>
+            </div> 
+               <div>
+                <h:outputLabel value="mobile"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.mobile}"  />
+                </div>
+            </div> 
+                 <div>
+                <h:outputLabel value="idstore"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.idstore}"  />
                 </div>
             </div>
+                    <div>
+                <h:outputLabel value="idrole"   />
+                <div >
+                    <h:inputText value="#{userManagedBean.user.idrole}"  />
+                </div>
+            </div>
+            
             <div>
                 <div >
-                    <h:commandButton value="Save Record" action="#{book.saveStudentRecord}"/>
+                    <h:commandButton value="Save Record" action="#{userManagedBean.create}"/>
                 </div>
             </div>
         </h:panelGrid>
